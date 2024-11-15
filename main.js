@@ -61,8 +61,23 @@ class Adventurer extends Character {
     }
 
     scout () {
-        console.log(`${this.name} is scoutig ahead...`)
+        console.log(`${this.name} is scouting ahead...`)
         super.roll()
+    }
+    
+    // 1.Adventurer rolled 1 and 2.Adventurer rolled 2 1.Adventurer gets -1
+    duel(Adventurer) {
+        const rolled = this.roll()
+        const opponent = Adventurer.roll()
+        if (rolled > opponent ) {
+            this.health -= 1
+            console.log(`Rolled: ${rolled}`)
+        } else if (rolled < opponent) {
+            console.log(`Opponent: ${opponent}`)
+            opponent.health -= 1
+        } else {
+            console.log("Its a draw")
+        }
     }
 }
 
@@ -121,5 +136,6 @@ const roles = new Adventurer();
 
 console.log(Adventurer.Roles)
 
-// Part 5
-// Factories
+//  Part 6
+
+console.log
